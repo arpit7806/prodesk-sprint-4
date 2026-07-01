@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LetterForge — AI Cover Letter Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <div class="app-wrapper">
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-name">LetterForge</span>
+      </div>
+      <p class="header-tagline">Craft compelling cover letters with AI precision</p>
+    </header>
+
+    <main class="main-grid">
+
+      <!-- LEFT: Input Form -->
+      <section class="panel form-panel">
+        <p class="panel-label">YOUR DETAILS</p>
+
+        <div class="form-group">
+          <label class="field-label" for="name">Full Name</label>
+          <input class="field-input" type="text" id="name" placeholder="Arpit Sharma" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="role">Job Role</label>
+          <input class="field-input" type="text" id="role" placeholder="Frontend Developer Intern" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="company">Target Company</label>
+          <input class="field-input" type="text" id="company" placeholder="Google" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="skills">Key Skills</label>
+          <textarea class="field-input field-textarea" id="skills" placeholder="HTML, CSS, JavaScript, React, problem-solving, teamwork..." rows="4"></textarea>
+        </div>
+
+        <button class="btn-generate" id="generateBtn">
+          <span class="btn-text">Generate Letter</span>
+          <span class="btn-arrow">↗</span>
+        </button>
+
+        <p class="error-msg hidden" id="errorMsg"></p>
+      </section>
+
+      <!-- RIGHT: Output -->
+      <section class="panel output-panel">
+        <div class="output-header">
+          <p class="panel-label">GENERATED LETTER</p>
+          <button class="btn-copy hidden" id="copyBtn">
+            <span id="copyText">Copy</span>
+          </button>
+        </div>
+
+        <div class="output-area">
+          <div class="state-placeholder" id="placeholderState">
+            <span class="placeholder-mark">✦</span>
+            <p>Fill in your details and hit Generate.<br/>Your cover letter will appear here.</p>
+          </div>
+
+          <div class="state-loading hidden" id="loadingState">
+            <div class="loader-ring"></div>
+            <p class="loader-label">Crafting your letter...</p>
+          </div>
+
+          <div class="state-result hidden" id="resultState">
+            <div id="resultText"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Powered by Gemini AI &nbsp;·&nbsp; Prodesk IT Sprint 4</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
