@@ -1,56 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LetterForge — AI Cover Letter Generator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
+  <!-- Scroll Progress -->
+  <div class="progress-bar" id="progressBar"></div>
 
-  <div class="app-wrapper">
+  <!-- Mouse Glow -->
+  <div class="mouse-glow"></div>
 
-    <header class="header">
-      <div class="logo">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
         <span class="logo-mark">✦</span>
         <span class="logo-name">LetterForge</span>
       </div>
-      <p class="header-tagline">Craft compelling cover letters with AI precision</p>
-    </header>
+      <div class="nav-links">
+        <a href="#app" class="nav-link" onclick="event.preventDefault();scrollToApp()">Generator</a>
+        <a href="#features" class="nav-link">Features</a>
+      </div>
+      <button class="nav-cta" onclick="scrollToApp()">
+        Generate Now <span class="nav-arr">↗</span>
+      </button>
+    </div>
+  </nav>
 
-    <main class="main-grid">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
 
-      <!-- LEFT: Input Form -->
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <i data-lucide="sparkles" class="badge-icon"></i>
+        Powered by Gemini 2.5 Flash
+      </div>
+
+      <h1 class="hero-heading">
+        Create Job-Winning<br/>
+        <span class="gradient-text">Cover Letters</span><br/>
+        in Seconds
+      </h1>
+
+      <p class="hero-sub">
+        Transform your skills and experience into compelling cover letters
+        that get you hired. AI-powered, professionally crafted, instantly ready.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="scrollToApp()">
+          <i data-lucide="pen-square"></i>
+          Generate Now
+        </button>
+        <button class="btn-hero-ghost" onclick="scrollToApp()">
+          See How It Works
+          <i data-lucide="arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">10K+</span>
+          <span class="stat-lbl">Letters Generated</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">98%</span>
+          <span class="stat-lbl">Success Rate</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="stat-num">~3s</span>
+          <span class="stat-lbl">Generation Time</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <section class="features-strip reveal" id="features">
+    <div class="feature-pill"><i data-lucide="brain"></i>AI-Powered Generation</div>
+    <div class="feature-pill"><i data-lucide="shield"></i>Secure by Design</div>
+    <div class="feature-pill"><i data-lucide="zap"></i>Instant Results</div>
+    <div class="feature-pill"><i data-lucide="check-circle"></i>Professional Quality</div>
+  </section>
+
+  <!-- APP SECTION -->
+  <section class="app-section" id="app">
+    <div class="section-head reveal">
+      <div class="section-badge">
+        <i data-lucide="wand-2"></i>
+        Letter Generator
+      </div>
+      <h2 class="section-title">Craft Your Perfect Letter</h2>
+      <p class="section-sub">Fill in your details below and let Gemini AI create a tailored, professional cover letter in seconds.</p>
+    </div>
+
+    <div class="main-grid reveal">
+
+      <!-- FORM PANEL -->
       <section class="panel form-panel">
         <p class="panel-label">YOUR DETAILS</p>
 
         <div class="form-group">
-          <label class="field-label" for="name">Full Name</label>
-          <input class="field-input" type="text" id="name" placeholder="Arpit Kumar" autocomplete="off" />
+          <label class="field-label" for="name"><i data-lucide="user"></i>Full Name</label>
+          <input class="field-input" type="text" id="name" placeholder="Arpit Sharma" autocomplete="off"/>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="role">Job Role</label>
-          <input class="field-input" type="text" id="role" placeholder="Frontend Developer Intern" autocomplete="off" />
+          <label class="field-label" for="role"><i data-lucide="briefcase"></i>Job Role</label>
+          <input class="field-input" type="text" id="role" placeholder="Frontend Developer Intern" autocomplete="off"/>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="company">Target Company</label>
-          <input class="field-input" type="text" id="company" placeholder="Google" autocomplete="off" />
+          <label class="field-label" for="company"><i data-lucide="building-2"></i>Target Company</label>
+          <input class="field-input" type="text" id="company" placeholder="Google" autocomplete="off"/>
         </div>
 
         <div class="form-group">
-          <label class="field-label" for="skills">Key Skills</label>
-          <textarea class="field-input field-textarea" id="skills" placeholder="HTML, CSS, JavaScript, React, problem-solving, teamwork..." rows="4"></textarea>
+          <label class="field-label" for="skills"><i data-lucide="sparkles"></i>Key Skills</label>
+          <textarea class="field-input field-textarea" id="skills" placeholder="HTML, CSS, JavaScript, React, problem-solving..." rows="4"></textarea>
         </div>
 
         <button class="btn-generate" id="generateBtn">
+          <i data-lucide="wand-2" class="btn-icon"></i>
           <span class="btn-text">Generate Letter</span>
           <span class="btn-arrow">↗</span>
         </button>
@@ -58,24 +141,29 @@
         <p class="error-msg hidden" id="errorMsg"></p>
       </section>
 
-      <!-- RIGHT: Output -->
+      <!-- OUTPUT PANEL -->
       <section class="panel output-panel">
         <div class="output-header">
           <p class="panel-label">GENERATED LETTER</p>
           <button class="btn-copy hidden" id="copyBtn">
+            <i data-lucide="copy"></i>
             <span id="copyText">Copy</span>
           </button>
         </div>
 
         <div class="output-area">
           <div class="state-placeholder" id="placeholderState">
-            <span class="placeholder-mark">✦</span>
-            <p>Fill in your details and hit Generate.<br/>Your cover letter will appear here.</p>
+            <div class="ph-icon-wrap">
+              <i data-lucide="file-text" class="ph-icon"></i>
+            </div>
+            <p class="ph-title">Ready to Generate</p>
+            <p class="ph-sub">Fill in your details and hit Generate.<br/>Your cover letter will appear here.</p>
           </div>
 
           <div class="state-loading hidden" id="loadingState">
             <div class="loader-ring"></div>
             <p class="loader-label">Crafting your letter...</p>
+            <p class="loader-sub">Gemini AI is working its magic ✦</p>
           </div>
 
           <div class="state-result hidden" id="resultState">
@@ -84,14 +172,23 @@
         </div>
       </section>
 
-    </main>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <p>Powered by Gemini AI &nbsp;·&nbsp; Prodesk IT Sprint 4</p>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-name">LetterForge</span>
+      </div>
+      <p class="footer-tagline">Craft compelling cover letters with AI precision</p>
+      <div class="footer-div"></div>
+      <p class="footer-copy">Powered by Gemini AI &nbsp;·&nbsp; Prodesk IT Sprint 4 &nbsp;·&nbsp; Built by Arpit Kumar</p>
+    </div>
+  </footer>
 
-  </div>
-
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
